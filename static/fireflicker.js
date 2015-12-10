@@ -1,3 +1,3 @@
-var click = function {
-
+var click = function() {
+  return bleh;
 };
