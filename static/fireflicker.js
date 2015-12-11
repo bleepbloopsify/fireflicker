@@ -50,6 +50,16 @@ var setBellow = function(num){
 };
 
 var clickFire = function(){
+  expandFire;
   setFire(++localStorage.fire);
   clicks++;
+};
+
+var expandFire = function() {
+  $('#fireclick').click(function () {
+    $('#favicon').css({
+        'width': $(this).width()  * 1.1,
+        'height': $(this).height() * 1.1
+    });
+  })
 };
