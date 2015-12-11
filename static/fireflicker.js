@@ -66,12 +66,15 @@ var clickFire = function(){
 
 var expandFire = function() {
   $('#favicon').click(function () {
-    $(this).css({
-        'width': $(this).width()  * 1.01,
+    if (parseFloat($(this).css("width").slice(0, -2)) <= parseFloat(500)) {
+      $('#favicon').css({
+        'width': $(this).width() * 1.01,
         'height': $(this).height() * 1.01
-    });
-  })
+      });
+    }
+  });
 };
+
 
 var clickUpgrade = function() {
   possible = ["stove", "campfire", "furnace", "brickoven", "reactor", "volcano"];
