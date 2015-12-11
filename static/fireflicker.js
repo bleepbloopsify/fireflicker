@@ -78,8 +78,8 @@ var clickUpgrade = function() {
   upgrades = $("#upgrades").children().click(function(){
     var price = possible.indexOf(this.id) + 1;
     if (localStorage.fire >= price * 100){
-      setBellow(localStorage.bellow + price * 10);
-      setFire(localStorage.fire - price * 100);
+      setBellow(parseFloat(localStorage.bellow) + parseFloat(price * 10));
+      setFire(parseFloat(localStorage.fire) - parseFloat(price*100));
       this.html(this.html().slice(0,-1) + ++this.html().slice(-2,-1));
     }
   });
