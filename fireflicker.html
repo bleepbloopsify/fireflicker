@@ -7,38 +7,20 @@
     <link rel="icon" type="image/gif" href="static/favfire.gif">
   </head>
   <body>
-    <img id="favicon" src="static/favfire.gif">
-    <br>
-    <button id="fireclick">Fan The Flames!</button>
-    <div id="fire">0</div>
-    <div id="bellow">0 flames per second</div>
-    <button id="reset">Reset</button>
-
-    <table>
-      <tr>
-        <td> <img id="stove" src="static/stove.png" onclick="showID(this.id)">
-        10 clicks <br>0 stoves</td>
-      </tr>
-      <tr>
-        <td> <img id="campfire" src="static/campfire.png">
-        20 clicks <br>0 campfires</td>
-      </tr>
-      <tr>
-        <td> <img id="furnace" src="static/furnace.png">
-         50 clicks <br>0 furnaces</td>
-      </tr>
-      <tr>
-        <td> <img id="brickoven" src="static/brickoven.png">
-        70 clicks <br>0 brickovens</td>
-      </tr>
-      <tr>
-        <td> <img id="reactor" src="static/reactor.png">
-        90 clicks <br>0 reactors</td>
-      </tr>
-      <tr>
-        <td> <img id="volcano" src="static/volcano.png">
-        120 clicks <br>0 volcanos</td>
-      </tr>
-
+    <div class="container" id="fireplace">
+      <img id="favicon" src="static/favfire.gif">
+      <div id="fire">0</div>
+      <div>Fan The Flames!</div>
+      <div id="bellow">0 flames per second</div>
+      <button id="reset">Reset</button>
+    </div>
+    <ul>
+      <li id="stove"><img class="upgrade"  src="static/stove.png">0</li>
+      <li id="campfire"><img class="upgrade"  src="static/campfire.png">0</li>
+      <li id="furnace"><img class="upgrade"  src="static/furnace.png">0</li>
+      <li id="brickoven"><img class="upgrade"  src="static/brickoven.png">0</li>
+      <li id="reactor"><img class="upgrade"  src="static/reactor.jpg">0</li>
+      <li id="volcano"><img class="upgrade"  src="static/volcano.png">0</li>
+    </ul>
   </body>
 </html>
