@@ -75,16 +75,12 @@ var expandFire = function() {
 
 var clickUpgrade = function() {
   possible = ["stove", "campfire", "furnace", "brickoven", "reactor", "volcano"];
-  upgrades = document.getElementById("upgrades").children;
-  for (var child in upgrades) {
-    if ($.inArray(child, possible) > -1) {
-      $("#"+child).click(function() {
-        console.log(child);
-        if (child == "stove" && localStore.fire >= 10) {
-          localStorage.bellow += 10;
-          localStorage.bellow -= 10;
-        };
-      });
+  upgrades = $("#upgrades").children().click(function(){
+    var price = possible.indexOf(this.id) + 1;
+    if (localStorage.fire >= price * 100){
+      setBellow(localStorage.bellow + price * 10);
+      setFire(localStorage.fire - price * 100);
+      this.html(this.html().slice(0,-1) + ++this.html().slice(-2,-1));
     }
-  };
+  });
 };
