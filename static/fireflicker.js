@@ -84,7 +84,7 @@ var clickUpgrade = function() {
 
       setBellow(parseFloat(localStorage.bellow) + parseFloat(price * 10));
       setFire(parseFloat(localStorage.fire) - parseFloat(price*100));
-      this.innerHTML = this.innerHTML.slice(0,this.innerHTML.indexOf("</img>") + 6) + (parseInt(this.innerHTML.slice(this.innerHTML.indexOf("</img>"))) + 1);
+      this.innerHTML = this.innerHTML.slice(0,this.innerHTML.indexOf(">") + 1) + (parseInt(this.innerHTML.slice(this.innerHTML.indexOf("</img>"))) + 1);
     }
   });
 };
