@@ -73,27 +73,18 @@ var expandFire = function() {
   })
 };
 
-var addFire = function() {
-  if (localStorage.fire%6 == 0) {
-
-  }
-
-};
-
-var showID = function(obj) {
-  return obj;
-};
-
 var clickUpgrade = function() {
-  id = showID; ///////////HERE
-  console.log(id);
-  if (id == "stove") {
-    if (localStore.fire >= 10) {
-      localStore.fire -= 10;
-      stoves++;
-      $("#stove").html(stoves + " stoves");
-
+  possible = ["stove", "campfire", "furnace", "brickoven", "reactor", "volcano"];
+  upgrades = document.getElementById("upgrades").children;
+  for (var child in upgrades) {
+    if ($.inArray(child, possible) > -1) {
+      $("#"+child).click(function() {
+        console.log(child);
+        if (child == "stove" && localStore.fire >= 10) {
+          localStorage.bellow += 10;
+          localStorage.bellow -= 10;
+        };
+      });
     }
-  }
-
+  };
 };
