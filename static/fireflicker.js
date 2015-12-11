@@ -26,8 +26,6 @@ var initButtons = function(){
     clickFire();
   });
 
-  $("favicon").clickSpark();
-
   $("#reset").click(function(){
     reset();
   })
@@ -69,8 +67,8 @@ var clickFire = function(){
 var expandFire = function() {
   $('#favicon').click(function () {
     $(this).css({
-        'width': $(this).width()  * 1.01,
-        'height': $(this).height() * 1.01
+        'width': $(this).width()  * 1.001,
+        'height': $(this).height() * 1.001
     });
   })
 };
@@ -80,11 +78,9 @@ var clickUpgrade = function() {
   upgrades = $("#upgrades").children().click(function(){
     var price = possible.indexOf(this.id) + 1;
     if (localStorage.fire >= price * 100){
-      setBellow(localStorage.bellow + price * 10);
-      setFire(localStorage.fire - price * 100);
-      this.html(function(){
-        return this.html().slice(0,-1) + ++this.html().slice(-2,-1);
-      });
+      setBellow(Number(localStorage.bellow) + price * 10);
+      setFire(Number(localStorage.fire) - price * 100);
+      console.log(parseInt(this.innerHTML));
     }
   });
 };
