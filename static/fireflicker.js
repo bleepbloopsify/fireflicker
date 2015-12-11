@@ -42,10 +42,6 @@ var beginFiring = function(num){
     $("#bellow").html(Number(localStorage.bellow) + clicks + " flames per second");
     clicks = 0;
     setFire(Number(localStorage.fire) + Number(localStorage.bellow));
-    // $("#favicon").css({
-    //     'width': Number((localStorage.fire + 100)  * 1.001) + "px",
-    //     'height': Number((localStorage.fire + 100) * 1.001) + "px"
-    // });
   }, num);
 };
 
@@ -66,21 +62,29 @@ var clickFire = function(){
 
 var expandFire = function() {
   $('#favicon').click(function () {
-    $(this).css({
-        'width': $(this).width()  * 1.001,
-        'height': $(this).height() * 1.001
-    });
-  })
+    if (parseFloat($(this).css("width").slice(0, -2)) <= parseFloat(500)) {
+      $('#favicon').css({
+        'width': $(this).width() * 1.01,
+        'height': $(this).height() * 1.01
+      });
+    }
+  });
 };
+
 
 var clickUpgrade = function() {
   possible = ["stove", "campfire", "furnace", "brickoven", "reactor", "volcano"];
   upgrades = $("#upgrades").children().click(function(){
     var price = possible.indexOf(this.id) + 1;
     if (localStorage.fire >= price * 100){
+
       setBellow(Number(localStorage.bellow) + price * 10);
       setFire(Number(localStorage.fire) - price * 100);
       console.log(parseInt(this.innerHTML));
+
+      setBellow(parseFloat(localStorage.bellow) + parseFloat(price * 10));
+      setFire(parseFloat(localStorage.fire) - parseFloat(price*100));
+      this.innerHTML = this.innerHTML.slice(0,this.innerHTML.indexOf("</img>") + 6) + (parseInt(this.innerHTML.slice(this.innerHTML.indexOf("</img>"))) + 1);
     }
   });
 };
