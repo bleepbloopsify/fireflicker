@@ -1,4 +1,11 @@
 var clicks = 0;
+var stoves = 0;
+var campfires = 0;
+var furnaces = 0;
+var brickovens = 0;
+var reactors = 0;
+var volcanos = 0;
+
 var interval = 500;
 $(document).ready(function(){
   //Assigning localstorage variables
@@ -11,11 +18,14 @@ $(document).ready(function(){
   //Assigning Button Listeners
   initButtons();
 
+  expandFire();
+
   beginFiring(interval);
+  clickUpgrade();
 });
 
 var initButtons = function(){
-  $("#fireclick").click( function(){
+  $("#favicon").click( function(){
     clickFire();
   });
 
@@ -50,16 +60,40 @@ var setBellow = function(num){
 };
 
 var clickFire = function(){
-  expandFire;
   setFire(++localStorage.fire);
   clicks++;
 };
 
 var expandFire = function() {
-  $('#fireclick').click(function () {
-    $('#favicon').css({
-        'width': $(this).width()  * 1.1,
-        'height': $(this).height() * 1.1
+  $('#favicon').click(function () {
+    $(this).css({
+        'width': $(this).width()  * 1.5,
+        'height': $(this).height() * 1.5
     });
   })
+};
+
+var addFire = function() {
+  if (localStorage.fire%6 == 0) {
+
+  }
+
+};
+
+var showID = function(obj) {
+  return obj;
+};
+
+var clickUpgrade = function() {
+  id = showID; ///////////HERE
+  console.log(id);
+  if (id == "stove") {
+    if (localStore.fire >= 10) {
+      localStore.fire -= 10;
+      stoves++;
+      $("#stove").html(stoves + " stoves");
+
+    }
+  }
+
 };
