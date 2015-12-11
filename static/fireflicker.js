@@ -67,10 +67,9 @@ var clickFire = function(){
 var expandFire = function() {
   $('#favicon').click(function () {
     $(this).css({
-        'width': $(this).width()  * 1.001,
-        'height': $(this).height() * 1.001
+        'width': $(this).width()  * 1.01,
+        'height': $(this).height() * 1.01
     });
-    clickFire();
   })
 };
 
