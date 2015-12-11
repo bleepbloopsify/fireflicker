@@ -1,8 +1,32 @@
-body{
+html{
   background-color: orange;
 }
 
+div{
+  background-color: white;
+  padding:10px;
+}
+
+.container{
+  background-color: white;
+}
+
+#fireplace{
+    margin-top:10%;
+    margin-left:20%;
+    float:left;
+    text-align: center;
+}
+
+#fire, #bellow{
+  background-color:orange;
+  color:red;
+  font-size:24;
+  font-weight:bolder;
+}
+
 #favicon{
+  align:center;
   width:40px;
   height:40px;
 }

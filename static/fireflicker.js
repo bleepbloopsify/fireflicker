@@ -25,7 +25,6 @@ var initButtons = function(){
 }
 
 var reset = function(){
-  $("div").children().html("");
   for(var item in localStorage){
     localStorage[item] = 0;
   }
