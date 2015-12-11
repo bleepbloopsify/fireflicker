@@ -26,6 +26,8 @@ var initButtons = function(){
     clickFire();
   });
 
+  $("favicon").clickSpark();
+
   $("#reset").click(function(){
     reset();
   })
@@ -80,7 +82,9 @@ var clickUpgrade = function() {
     if (localStorage.fire >= price * 100){
       setBellow(localStorage.bellow + price * 10);
       setFire(localStorage.fire - price * 100);
-      this.html(this.html().slice(0,-1) + ++this.html().slice(-2,-1));
+      this.html(function(){
+        return this.html().slice(0,-1) + ++this.html().slice(-2,-1);
+      });
     }
   });
 };
